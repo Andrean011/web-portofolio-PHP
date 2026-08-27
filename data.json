@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "name": "Robbin Chandra Falla Arya Ardhana",
+    "role": "Penanggung Jawab",
+    "photo": "img/fotoprofil/Chandra.jpeg",
+    "motivation": "Membangun sistem yang handal dan skalabel untuk masa depan.",
+    "about": "Fokus pada pengembangan perangkat lunak backend, cloud engineering, dan DevOps. Terbiasa menggunakan Go dan PHP untuk merancang RESTful API.",
+    "social": {
+      "github": "https://github.com/",
+      "linkedin": "https://linkedin.com/",
+      "instagram": "https://instagram.com/"
+    },
+    "certificates": []
+  },
+  {
+    "id": 2,
+    "name": "Ranita Rizqi Wardatussholikhah",
+    "role": "Penanggung Jawab",
+    "photo": "img/fotoprofil/risqi.jpeg",
+    "motivation": "Belum ada motivasi yang ditambahkan.",
+    "about": "Belum ada deskripsi profil yang ditambahkan.",
+    "social": {
+      "github": "",
+      "linkedin": "",
+      "instagram": ""
+    },
+    "certificates": []
+  },
+  {
+    "id": 3,
+    "name": "Dysca Putri Kharismawati",
+    "role": "Anggota",
+    "photo": "img/fotoprofil/dysca.jpeg",
+    "motivation": "Kegagalan bukanlah akhir, melainkan awal untuk mencoba lebih baik.",
+    "about": "Saya sangat suka mendengarkan musik.",
+    "social": {
+      "github": "https://github.com/dyscaputrikharismawati09",
+      "linkedin": "https://www.linkedin.com/in/dysca-putri-kharismawati-90581142a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "instagram": "https://www.instagram.com/dyscaputrii?igsh=MWFzcXVoYWl0c2loZw=="
+    },
+    "certificates": []
+  },
+  {
+    "id": 4,
+    "name": "Salma Ainun Nuraini",
+    "role": "Anggota",
+    "photo": "img/fotoprofil/salma.jpeg",
+    "motivation": "Buktikan dengan proses, bukan hanya dengan kata-kata.",
+    "about": "Saya suka membaca buku, menyanyi, dan mendengarkan lagu.",
+    "social": {
+      "github": "https://github.com/salmanuraini",
+      "linkedin": "https://www.linkedin.com/in/salma-nuraini-b716ba42a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "instagram": "https://www.instagram.com/ssalmaanr?utm_source=qr&igsh=MXNtdjY5aTg4MTNoZw=="
+    },
+    "certificates": []
+  },
+  {
+    "id": 5,
+    "name": "Eva April Lia",
+    "role": "Anggota",
+    "photo": "img/fotoprofil/eva.jpeg",
+    "motivation": "Live for your growth, your dreams, and your future.",
+    "about": "Saya suka makan mi ayam.",
+    "social": {
+      "github": "https://github.com/evaaprillia",
+      "linkedin": "https://www.linkedin.com/in/eva-april-lia-107b10428?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "instagram": "https://www.instagram.com/p/DcLv5TFSPWc/?igsh=MTUxbzVxdnExenpibA=="
+    },
+    "certificates": []
+  },
+  {
+    "id": 6,
+    "name": "Rizky Bagus Wardiansyah",
+    "role": "Anggota",
+    "photo": "img/fotoprofil/rizki.jpeg",
+    "motivation": "Awali dengan Bismillah, akhiri dengan Alhamdulillah.",
+    "about": "Saya suka berolahraga, seperti bermain bola dan jogging.",
+    "social": {
+      "github": "https://github.com/rizkybagusw11-php",
+      "linkedin": "https://www.linkedin.com/in/rizky-bagus-08993a42a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "instagram": "https://www.instagram.com/rizkybgst_?igsi=cTZraGxsbWJvamZy"
+    },
+    "certificates": []
+  },
+  {
+    "id": 7,
+    "name": "Dafa Muhharom Sri Dwianto",
+    "role": "Anggota",
+    "photo": "img/fotoprofil/dafa.jpeg",
+    "motivation": "Jangan takut gagal, takutlah kalau WiFi mati saat tugas belum terkirim.",
+    "about": "Saya adalah pribadi yang memiliki rasa ingin tahu tinggi dan senang mempelajari hal-hal baru, terutama yang berkaitan dengan teknologi dan komputer.",
+    "social": {
+      "github": "https://github.com/Dafamsd",
+      "linkedin": "https://www.linkedin.com/in/dafa-muhharom-081b1b430?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "instagram": "https://www.instagram.com/dafamsd?igsh=bXh1dTd5Y21vZXh2&igsi=bXh1dTd5Y21vZXh2"
+    },
+    "certificates": []
+  },
+  {
+    "id": 8,
+    "name": "Andrean Syahputra Purifigara",
+    "role": "Anggota",
+    "photo": "img/fotoprofil/andre.jpeg",
+    "motivation": "Saya bangga menjadi WNI.",
+    "about": "Saya sangat suka bermain game, ngoding, dan menonton anime.",
+    "social": {
+      "github": "https://github.com/Andrean011",
+      "linkedin": "https://www.linkedin.com/in/andrean-syahputra-purifigara-24979b42a/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BVdlejdBfSliNDVedVtEmNQ%3D%3D",
+      "instagram": "https://www.instagram.com/p/DcIdX3-k0fU/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ=="
+    },
+    "certificates": []
+  },
+  {
+    "id": 9,
+    "name": "Reifan Novian Ardana",
+    "role": "Anggota",
+    "photo": "",
+    "motivation": "Setiap langkah pasti bergejolak.",
+    "about": "Saya lahir di Ngawi. Keunikan saya adalah menyukai semua buah.",
+    "social": {
+      "github": "https://github.com/ardana-netizen",
+      "linkedin": "https://www.linkedin.com/in/reifan-n-a-29127a42b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+      "instagram": "https://www.instagram.com/reel/DcOgbxzv-Ae/?igsh=MXQyaDF2bmdkZWt4aQ=="
+    },
+    "certificates": []
+  }
+]
