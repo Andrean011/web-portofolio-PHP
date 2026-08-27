@@ -19,7 +19,7 @@ function renderCards(members) {
     container.innerHTML = members.map(m => `
         <article class="card ${m.role === 'Penanggung Jawab' ? 'priority' : ''}" onclick="showDetail(${m.id})" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showDetail(${m.id}); }">
             <div class="card-tab">
-                <span>member_${String(m.id).padStart(2, '0')}.php</span>
+                <span>${m.displayName}</span>
                 <span class="card-status">active</span>
             </div>
             <div class="card-photo-wrap">

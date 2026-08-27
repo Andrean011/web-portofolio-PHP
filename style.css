@@ -1,6 +1,3 @@
-/* =========================================================
-   ========================================================= */
-
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 :root {
@@ -29,7 +26,6 @@
   --shadow-modal: 0 30px 80px -20px rgba(0, 0, 0, 0.75);
 }
 
-/* --- reset --- */
 * {
   margin: 0;
   padding: 0;
@@ -51,7 +47,6 @@ body {
   overflow-x: hidden;
 }
 
-/* faint drifting grid + soft violet glow, like an editor's minimap glow */
 .background-overlay {
   position: fixed;
   inset: 0;
@@ -65,12 +60,9 @@ body {
   background-position: 0 0, 0 0, -1px -1px, -1px -1px;
 }
 
-/* =========================================================
-   HEADER — styled as a code-editor title bar
-   ========================================================= */
 header {
   position: relative;
-  padding: 4.5rem 1.5rem 3.5rem;
+  padding: 4.5rem 1.5rem 4.5rem;
   text-align: center;
   isolation: isolate;
   overflow: hidden;
@@ -82,23 +74,101 @@ header {
   box-shadow: 0 18px 45px rgba(10, 10, 18, 0.34);
 }
 
+.header-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: radial-gradient(
+    360px circle at var(--mx, 50%) var(--my, 15%),
+    rgba(136, 146, 191, 0.28),
+    transparent 65%
+  );
+  pointer-events: none;
+}
+
+.header-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.header-particles span {
+  position: absolute;
+  bottom: -10%;
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: rgba(136, 146, 191, 0.3);
+  animation: float-up linear infinite;
+}
+
+.header-particles span:nth-child(1) { left: 6%;  color: rgba(244, 202, 100, 0.3); animation-duration: 15s; animation-delay: 0s; }
+.header-particles span:nth-child(2) { left: 20%; color: rgba(110, 231, 183, 0.3); animation-duration: 12s; animation-delay: 2.4s; }
+.header-particles span:nth-child(3) { left: 38%; color: rgba(136, 146, 191, 0.32); animation-duration: 17s; animation-delay: 4.2s; }
+.header-particles span:nth-child(4) { left: 58%; color: rgba(244, 202, 100, 0.25); animation-duration: 13.5s; animation-delay: 1s; }
+.header-particles span:nth-child(5) { left: 76%; color: rgba(110, 231, 183, 0.25); animation-duration: 18s; animation-delay: 6s; }
+.header-particles span:nth-child(6) { left: 90%; color: rgba(136, 146, 191, 0.3); animation-duration: 11s; animation-delay: 3.2s; }
+
+/* status badge, styled like the "active" pill on each card */
+.header-badge {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(110, 231, 183, 0.35);
+  background: rgba(110, 231, 183, 0.08);
+  color: var(--comment-mint);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--comment-mint);
+  animation: badge-pulse 2s ease-in-out infinite;
+}
+
+/* thin gradient line sweeping along the bottom edge of the header */
+.header-scanline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--string-amber), var(--comment-mint), transparent);
+  background-size: 200% 100%;
+  animation: scan-sweep 6s linear infinite;
+  opacity: 0.85;
+}
+
+/* traffic-light dots of an editor window */
 header::before {
-  /* the traffic-light dots of an editor window */
   content: '';
   display: block;
-  width: 62px;
+  width: 61px;
   height: 16px;
   margin: 0 auto 1.75rem;
   background-image:
-    radial-gradient(circle, var(--tag-red) 5px, transparent 5.5px),
-    radial-gradient(circle, var(--string-amber) 5px, transparent 5.5px),
-    radial-gradient(circle, var(--comment-mint) 5px, transparent 5.5px);
+    radial-gradient(circle, var(--tag-red) 50%, transparent 52%),
+    radial-gradient(circle, var(--string-amber) 50%, transparent 52%),
+    radial-gradient(circle, var(--comment-mint) 50%, transparent 52%);
   background-repeat: no-repeat;
-  background-position: 0 center, 27px center, 54px center;
+  background-size: 11px 11px;
+  background-position: 0 center, 25px center, 50px center;
   position: relative;
   z-index: 1;
 }
 
+/* faint grid + diagonal hatch behind the title, fading toward the bottom */
 header::after {
   content: '';
   position: absolute;
@@ -120,17 +190,31 @@ header h1 {
   font-weight: 700;
   font-size: clamp(1.9rem, 4.2vw, 3rem);
   letter-spacing: -0.02em;
-  color: var(--text);
   text-shadow: 0 3px 18px rgba(0, 0, 0, 0.4);
+
+  background: linear-gradient(
+    100deg,
+    var(--text) 25%,
+    var(--php-violet) 42%,
+    var(--string-amber) 52%,
+    var(--text) 68%
+  );
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 7s linear infinite;
 }
 
 header h1::before {
   color: var(--text-faint);
+  -webkit-text-fill-color: var(--text-faint);
   font-weight: 400;
 }
 
 header h1::after {
   color: var(--text-faint);
+  -webkit-text-fill-color: var(--text-faint);
   font-weight: 400;
 }
 
@@ -150,33 +234,29 @@ header p {
 }
 
 header p::before {
-  content: '< ';
   color: var(--text-faint);
 }
 
 header p::after {
-  content: ' >';
   color: var(--text-faint);
 }
-
-/* =========================================================
-   GRID — the member roster
-   ========================================================= */
 .grid-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem 6rem;
+  padding: 3.5rem 1.5rem 6rem;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   align-items: stretch;
   gap: 1.75rem;
 }
 
-/* Each member is rendered as its own little "file card".
-   Assumed class names below (.member-card, .member-avatar, etc.)
-   — adjust to match whatever script.js actually outputs. */
+/* --- shared card shell --- */
 .member-card,
 .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -201,11 +281,21 @@ header p::after {
   outline-offset: 2px;
 }
 
-/* file-tab strip at the top of each card */
+.card.priority {
+  border-color: rgba(244, 202, 100, 0.55);
+}
+
+.card.priority .card-status {
+  color: var(--string-amber);
+}
+
+/* --- file-tab strip at the top of each card --- */
 .member-card-header,
 .card-tab {
+  position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 0.4rem;
   padding: 0.65rem 0.9rem;
   background: var(--surface);
@@ -213,6 +303,7 @@ header p::after {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--text-faint);
+  text-transform: lowercase;
 }
 
 .member-card-header::before,
@@ -222,6 +313,26 @@ header p::after {
   font-size: 0.55rem;
 }
 
+.card-tab {
+  justify-content: center;
+}
+
+.card-tab::before {
+  position: absolute;
+  left: 0.9rem;
+}
+
+.card-status {
+  color: var(--comment-mint);
+  font-size: 0.62rem;
+}
+
+.card-tab .card-status {
+  position: absolute;
+  right: 0.9rem;
+}
+
+/* --- simple avatar (member-card family) --- */
 .member-avatar,
 .member-photo {
   display: block;
@@ -232,6 +343,66 @@ header p::after {
   border-bottom: 1px solid var(--border);
 }
 
+/* --- rich circular avatar (card family) --- */
+.card-photo-wrap {
+  position: relative;
+  width: min(calc(100% - 1.4rem), 240px);
+  aspect-ratio: 1 / 1;
+  margin: 0.7rem auto 0;
+  overflow: hidden;
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  outline: 1px solid rgba(136, 146, 191, 0.35);
+  outline-offset: 3px;
+  background: var(--surface);
+  transition: border-color 0.25s ease, outline-color 0.25s ease;
+}
+
+.card-photo-wrap > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  background: var(--surface);
+}
+
+.card-photo-wrap > .photo-placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+.card:hover .card-photo-wrap,
+.card:focus-visible .card-photo-wrap {
+  border-color: var(--php-violet);
+  outline-color: var(--string-amber);
+}
+
+.card-number {
+  position: absolute;
+  right: 0.8rem;
+  bottom: 0.7rem;
+  padding: 0.18rem 0.45rem;
+  background: rgba(20, 20, 31, 0.82);
+  border: 1px solid rgba(233, 233, 242, 0.2);
+  border-radius: 4px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+}
+
+/* initials placeholder used when a member has no photo */
+.photo-placeholder {
+  display: grid;
+  place-items: center;
+  background: var(--surface);
+  color: var(--php-violet);
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* --- text content, simple family --- */
 .member-info {
   padding: 1.1rem 1.2rem 1.4rem;
 }
@@ -244,7 +415,6 @@ header p::after {
 }
 
 .member-name::before {
-  content: '$';
   color: var(--string-amber);
 }
 
@@ -296,9 +466,76 @@ header p::after {
   border-color: var(--php-violet-dim);
 }
 
-/* =========================================================
-   MODAL — expanded member detail, framed like a bigger editor window
-   ========================================================= */
+/* --- text content, rich family --- */
+.card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.15rem 1.2rem 1.25rem;
+}
+
+.card h3 {
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.card h3::before {
+  color: var(--string-amber);
+}
+
+.card .role {
+  margin-top: 0.35rem;
+  color: var(--comment-mint);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.card .role::before {
+  content: '// ';
+  color: var(--text-faint);
+}
+
+.motivation-label {
+  margin-top: 1.1rem;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.card .motivation {
+  margin-top: 0.7rem;
+  min-height: 3.2em;
+  padding-left: 0.8rem;
+  border-left: 2px solid var(--php-violet-dim);
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  font-style: italic;
+}
+
+.card-action {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 1.15rem;
+  border-top: 1px solid var(--border);
+  color: var(--php-violet);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+.card-action span {
+  color: var(--string-amber);
+}
+
+/* -----------------------------------------------------------
+   6. MODAL — expanded member detail, framed like a bigger editor window
+   Simple title bar (.modal-header) and rich title bar (.modal-topbar)
+   are both included — keep whichever matches your markup.
+   ----------------------------------------------------------- */
 #modal-root:empty {
   display: none;
 }
@@ -329,6 +566,7 @@ header p::after {
   animation: rise-in 0.25s ease;
 }
 
+/* rich title bar */
 .modal-topbar {
   display: flex;
   align-items: center;
@@ -356,6 +594,7 @@ header p::after {
   margin-left: auto;
 }
 
+/* simple title bar */
 .modal-header {
   display: flex;
   align-items: center;
@@ -373,7 +612,6 @@ header p::after {
 .close {
   width: 26px;
   height: 26px;
-  border: none;
   border: 1px solid rgba(233, 233, 242, 0.18);
   border-radius: 50%;
   background: rgba(20, 20, 31, 0.35);
@@ -411,6 +649,7 @@ header p::after {
   padding: 1.6rem 1.6rem 2rem;
 }
 
+/* --- rich profile block: photo + name + role side by side --- */
 .modal-profile {
   display: grid;
   grid-template-columns: 180px 1fr;
@@ -438,16 +677,6 @@ header p::after {
   outline: 1px solid rgba(136, 146, 191, 0.35);
   outline-offset: 4px;
   box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
-}
-
-.photo-placeholder {
-  display: grid;
-  place-items: center;
-  background: var(--surface);
-  color: var(--php-violet);
-  font-family: var(--font-mono);
-  font-size: 2rem;
-  font-weight: 700;
 }
 
 .modal-photo.photo-placeholder {
@@ -482,7 +711,6 @@ header p::after {
 }
 
 .modal-name::before {
-  content: '$';
   color: var(--string-amber);
 }
 
@@ -493,7 +721,8 @@ header p::after {
   color: var(--comment-mint);
 }
 
-.modal-about {
+.modal-about,
+.modal-bio {
   margin-top: 1rem;
   color: var(--text-dim);
   font-size: 0.92rem;
@@ -597,16 +826,34 @@ header p::after {
   color: var(--string-amber);
 }
 
-.modal-bio {
-  margin-top: 1rem;
-  color: var(--text-dim);
-  font-size: 0.92rem;
-}
-
 .modal-social {
   margin-top: 1.4rem;
   display: flex;
   gap: 0.65rem;
+}
+
+/* -----------------------------------------------------------
+   7. KEYFRAMES
+   ----------------------------------------------------------- */
+@keyframes float-up {
+  0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  12% { opacity: 1; }
+  88% { opacity: 1; }
+  100% { transform: translateY(-320px) rotate(14deg); opacity: 0; }
+}
+
+@keyframes badge-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(110, 231, 183, 0.55); }
+  70% { box-shadow: 0 0 0 7px rgba(110, 231, 183, 0); }
+}
+
+@keyframes scan-sweep {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes shimmer {
+  to { background-position: -220% 50%; }
 }
 
 @keyframes fade-in {
@@ -619,6 +866,9 @@ header p::after {
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+/* -----------------------------------------------------------
+   8. REDUCED MOTION
+   ----------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation-duration: 0.001ms !important;
@@ -626,17 +876,18 @@ header p::after {
   }
 }
 
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
+/* -----------------------------------------------------------
+   9. RESPONSIVE
+   ----------------------------------------------------------- */
 @media (max-width: 640px) {
   header {
-    padding: 3rem 1.25rem 2.5rem;
+    padding: 3rem 1.25rem 3rem;
   }
 
   .grid-container {
     grid-template-columns: 1fr;
     gap: 1.25rem;
+    padding-top: 2.25rem;
   }
 
   .modal-body {
@@ -663,139 +914,4 @@ header p::after {
     padding-left: 0;
     padding-right: 0;
   }
-}
-
-.card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100%;
-}
-
-.card.priority {
-  border-color: rgba(244, 202, 100, 0.55);
-}
-
-.card.priority .card-status {
-  color: var(--string-amber);
-}
-
-.card-tab {
-  justify-content: space-between;
-  text-transform: lowercase;
-}
-
-.card-status {
-  color: var(--comment-mint);
-  font-size: 0.62rem;
-}
-
-.card-photo-wrap {
-  position: relative;
-  width: min(calc(100% - 1.4rem), 240px);
-  aspect-ratio: 1 / 1;
-  margin: 0.7rem auto 0;
-  overflow: hidden;
-  border: 2px solid var(--border);
-  border-radius: 14px;
-  outline: 1px solid rgba(136, 146, 191, 0.35);
-  outline-offset: 3px;
-  background: var(--surface);
-  transition: border-color 0.25s ease, outline-color 0.25s ease;
-}
-
-.card-photo-wrap > img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 20%;
-  background: var(--surface);
-}
-
-.card-photo-wrap > .photo-placeholder {
-  width: 100%;
-  height: 100%;
-}
-
-.card:hover .card-photo-wrap,
-.card:focus-visible .card-photo-wrap {
-  border-color: var(--php-violet);
-  outline-color: var(--string-amber);
-}
-
-.card-number {
-  position: absolute;
-  right: 0.8rem;
-  bottom: 0.7rem;
-  padding: 0.18rem 0.45rem;
-  background: rgba(20, 20, 31, 0.82);
-  border: 1px solid rgba(233, 233, 242, 0.2);
-  border-radius: 4px;
-  color: var(--text);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-}
-
-.card-content {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding: 1.15rem 1.2rem 1.25rem;
-}
-
-.card h3 {
-  font-family: var(--font-mono);
-  font-size: 1.05rem;
-  font-weight: 500;
-  line-height: 1.45;
-}
-
-.card h3::before {
-  color: var(--string-amber);
-}
-
-.card .role {
-  margin-top: 0.35rem;
-  color: var(--comment-mint);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-}
-
-.card .role::before {
-  color: var(--text-faint);
-}
-
-.motivation-label {
-  margin-top: 1.1rem;
-  color: var(--text-faint);
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.card .motivation {
-  margin-top: 0.7rem;
-  min-height: 3.2em;
-  padding-left: 0.8rem;
-  border-left: 2px solid var(--php-violet-dim);
-  color: var(--text-dim);
-  font-size: 0.88rem;
-  font-style: italic;
-}
-
-.card-action {
-  display: flex;
-  justify-content: space-between;
-  margin-top: auto;
-  padding-top: 1.15rem;
-  border-top: 1px solid var(--border);
-  color: var(--php-violet);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-}
-
-.card-action span {
-  color: var(--string-amber);
 }
