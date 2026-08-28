@@ -971,12 +971,21 @@ header p::after {
   }
 
   .header-meta {
-    gap: 0.6rem 1rem;
+    width: 100%;
+    max-width: 18rem;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1rem;
     margin-top: 1.5rem;
   }
 
   .header-meta span {
-    flex-basis: calc(50% - 0.5rem);
+    flex: 0 1 auto;
+    width: auto;
+    white-space: nowrap;
   }
 
   .grid-container {

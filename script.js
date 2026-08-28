@@ -17,7 +17,7 @@ function renderCards(members) {
     if (!container) return;
     
     container.innerHTML = members.map(m => `
-        <article class="card ${m.role === 'Penanggung Jawab' ? 'priority' : ''}" onclick="showDetail(${m.id})" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showDetail(${m.id}); }">
+        <article class="card ${m.role === 'Person Responsible' ? 'priority' : ''}" onclick="showDetail(${m.id})" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showDetail(${m.id}); }">
             <div class="card-tab">
                 <span>${m.displayName}</span>
             </div>
