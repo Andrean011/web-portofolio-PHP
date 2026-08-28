@@ -90,7 +90,7 @@ window.showDetail = async (id) => {
                 </div>
 
                 <div class="socials">
-                    ${member.social.github !== '#' ? `<a href="${member.social.github}" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="https://cdn.simpleicons.org/github" alt="">GitHub <span aria-hidden="true">-&gt;</span></a>` : ''}
+                    ${member.social.github !== '#' ? `<a href="${member.social.github}" target="_blank" rel="noopener noreferrer"><img class="social-icon github-icon" src="https://cdn.simpleicons.org/github" alt="">GitHub <span aria-hidden="true">-&gt;</span></a>` : ''}
                     ${member.social.linkedin !== '#' ? `<a href="${member.social.linkedin}" target="_blank" rel="noopener noreferrer"><span class="social-icon linkedin-logo" aria-hidden="true">in</span>LinkedIn <span aria-hidden="true">-&gt;</span></a>` : ''}
                     ${member.social.instagram !== '#' ? `<a href="${member.social.instagram}" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="https://cdn.simpleicons.org/instagram" alt="">Instagram <span aria-hidden="true">-&gt;</span></a>` : ''}
                 </div>

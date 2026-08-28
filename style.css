@@ -904,8 +904,12 @@ header p::after {
   filter: invert(72%) sepia(10%) saturate(500%) hue-rotate(195deg) brightness(90%);
 }
 
-.socials a:hover .social-icon {
-  filter: none;
+.github-icon {
+  filter: invert(82%) sepia(83%) saturate(541%) hue-rotate(344deg) brightness(102%) contrast(94%);
+}
+
+.socials a:hover img.social-icon {
+  filter: invert(82%) sepia(83%) saturate(541%) hue-rotate(344deg) brightness(102%) contrast(94%);
 }
 
 .linkedin-logo {
