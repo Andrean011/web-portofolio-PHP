@@ -17,16 +17,16 @@ function renderCards(members) {
     if (!container) return;
     
     container.innerHTML = members.map(m => `
-        <article class="card ${m.role === 'Person Responsible' ? 'priority' : ''}" onclick="showDetail(${m.id})" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showDetail(${m.id}); }">
+        <article class="card ${m.role === 'Team Lead' ? 'priority' : ''}" onclick="showDetail(${m.id})" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showDetail(${m.id}); }">
             <div class="card-tab">
-                <span>${m.displayName}</span>
+                <span class="card-nickname">${m.displayName}</span>
+                <span class="card-role ${m.role === 'Team Lead' ? 'responsible' : 'member'}">${m.role}</span>
             </div>
             <div class="card-photo-wrap">
                 ${renderPhoto(m, 'card-photo')}
             </div>
             <div class="card-content">
                 <h3>${m.name}</h3>
-                <p class="role">${m.role}</p>
                 <div class="motivation-label">motivation</div>
                 <p class="motivation">${capitalizeFirst(m.motivation)}</p>
                 <div class="card-action">View profile <span aria-hidden="true">-&gt;</span></div>
@@ -63,7 +63,7 @@ window.showDetail = async (id) => {
         modal.innerHTML = `
             <div class="modal-content glass">
                 <div class="modal-topbar">
-                    <span class="modal-topbar-label">Member details</span>
+                    <span class="modal-topbar-label ${member.role === 'Team Lead' ? 'responsible' : 'member'}">${member.role}</span>
                     <button class="modal-close close" type="button" aria-label="Tutup detail"></button>
                 </div>
                 <div class="modal-profile">
@@ -72,7 +72,6 @@ window.showDetail = async (id) => {
                     </div>
                     <div class="modal-copy">
                         <h2 class="modal-name">${member.name}</h2>
-                        <p class="modal-role">${member.role}</p>
                         <p class="modal-about">${member.about}</p>
                     </div>
                 </div>

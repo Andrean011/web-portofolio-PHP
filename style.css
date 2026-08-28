@@ -360,12 +360,53 @@ header p::after {
 }
 
 .card-tab {
-  justify-content: center;
+  justify-content: space-between;
+  min-height: 2.65rem;
+  padding-left: 1.65rem;
 }
 
 .card-tab::before {
   position: absolute;
   left: 0.9rem;
+}
+
+.card-nickname {
+  overflow: hidden;
+  color: var(--text);
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-role {
+  flex: 0 0 auto;
+  padding: 0.22rem 0.45rem;
+  border: 1px solid rgba(110, 231, 183, 0.3);
+  border-radius: 4px;
+  color: var(--comment-mint);
+  font-size: 0.58rem;
+  line-height: 1.2;
+  text-transform: none;
+  transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.card-role.responsible {
+  border-color: rgba(244, 202, 100, 0.45);
+  color: var(--string-amber);
+}
+
+.card:hover .card-role.responsible,
+.card:focus-visible .card-role.responsible {
+  background: var(--string-amber);
+  border-color: var(--string-amber);
+  color: #20213a;
+}
+
+.card:hover .card-role.member,
+.card:focus-visible .card-role.member {
+  background: var(--comment-mint);
+  border-color: var(--comment-mint);
+  color: #20213a;
 }
 
 .card-status {
@@ -513,12 +554,14 @@ header p::after {
   flex: 1;
   flex-direction: column;
   padding: 1.15rem 1.2rem 1.25rem;
+  background: linear-gradient(180deg, rgba(41, 42, 71, 0.42), rgba(32, 33, 58, 0.98));
 }
 
 .card h3 {
   font-family: var(--font-mono);
   font-size: 1.05rem;
   font-weight: 500;
+  color: var(--text);
   height: 2.9em;
   line-height: 1.45;
   overflow: hidden;
@@ -529,25 +572,15 @@ header p::after {
 }
 
 .card .role {
-  margin-top: 0.35rem;
-  height: 2.72em;
-  color: var(--comment-mint);
-  font-family: var(--font-mono);
-  font-size: 0.85rem;
-  line-height: 1.6;
-  overflow: hidden;
-}
-
-.card .role::before {
-  content: '// ';
-  color: var(--text-faint);
+  display: none;
 }
 
 .motivation-label {
   margin-top: 1.1rem;
-  color: var(--text-faint);
+  color: var(--string-amber);
   font-family: var(--font-mono);
   font-size: 0.68rem;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -560,7 +593,7 @@ header p::after {
   height: 4.8em;
   padding-left: 0.8rem;
   border-left: 2px solid var(--php-violet-dim);
-  color: var(--text-dim);
+  color: #c8c9e6;
   font-size: 0.88rem;
   font-style: italic;
   line-height: 1.6;
@@ -573,7 +606,7 @@ header p::after {
   margin-top: auto;
   padding-top: 1.15rem;
   border-top: 1px solid var(--border);
-  color: var(--php-violet);
+  color: var(--comment-mint);
   font-family: var(--font-mono);
   font-size: 0.72rem;
 }
@@ -638,9 +671,14 @@ header p::after {
 
 .modal-topbar-label {
   margin-left: 0.55rem;
-  color: var(--text-dim);
+  color: var(--comment-mint);
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.modal-topbar-label.responsible {
+  color: var(--string-amber);
 }
 
 .modal-topbar::before {
