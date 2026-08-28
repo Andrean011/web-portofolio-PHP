@@ -20,21 +20,24 @@ function renderCards(members) {
         <article class="card ${m.role === 'Penanggung Jawab' ? 'priority' : ''}" onclick="showDetail(${m.id})" tabindex="0" onkeydown="if(event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showDetail(${m.id}); }">
             <div class="card-tab">
                 <span>${m.displayName}</span>
-                <span class="card-status">active</span>
             </div>
             <div class="card-photo-wrap">
                 ${renderPhoto(m, 'card-photo')}
-                <span class="card-number">#${String(m.id).padStart(2, '0')}</span>
             </div>
             <div class="card-content">
                 <h3>${m.name}</h3>
                 <p class="role">${m.role}</p>
                 <div class="motivation-label">motivation</div>
-                <p class="motivation">${m.motivation}</p>
+                <p class="motivation">${capitalizeFirst(m.motivation)}</p>
                 <div class="card-action">View profile <span aria-hidden="true">-&gt;</span></div>
             </div>
         </article>
     `).join('');
+}
+
+function capitalizeFirst(value) {
+    if (!value) return value;
+    return value.charAt(0).toUpperCase() + value.slice(1);
 }
 
 function renderPhoto(member, className) {
@@ -60,16 +63,14 @@ window.showDetail = async (id) => {
         modal.innerHTML = `
             <div class="modal-content glass">
                 <div class="modal-topbar">
-                    <span>profile_${String(member.id).padStart(2, '0')}.php</span>
+                    <span class="modal-topbar-label">Member details</span>
                     <button class="modal-close close" type="button" aria-label="Tutup detail"></button>
                 </div>
                 <div class="modal-profile">
                     <div class="modal-photo-wrap">
                         ${renderPhoto(member, 'modal-photo')}
-                        <span class="modal-id">ID ${String(member.id).padStart(2, '0')}</span>
                     </div>
                     <div class="modal-copy">
-                        <span class="modal-eyebrow">member profile</span>
                         <h2 class="modal-name">${member.name}</h2>
                         <p class="modal-role">${member.role}</p>
                         <p class="modal-about">${member.about}</p>
@@ -90,9 +91,9 @@ window.showDetail = async (id) => {
                 </div>
 
                 <div class="socials">
-                    ${member.social.github !== '#' ? `<a href="${member.social.github}" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">-&gt;</span></a>` : ''}
-                    ${member.social.linkedin !== '#' ? `<a href="${member.social.linkedin}" target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">-&gt;</span></a>` : ''}
-                    ${member.social.instagram !== '#' ? `<a href="${member.social.instagram}" target="_blank" rel="noopener noreferrer">Instagram <span aria-hidden="true">-&gt;</span></a>` : ''}
+                    ${member.social.github !== '#' ? `<a href="${member.social.github}" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="https://cdn.simpleicons.org/github" alt="">GitHub <span aria-hidden="true">-&gt;</span></a>` : ''}
+                    ${member.social.linkedin !== '#' ? `<a href="${member.social.linkedin}" target="_blank" rel="noopener noreferrer"><span class="social-icon linkedin-logo" aria-hidden="true">in</span>LinkedIn <span aria-hidden="true">-&gt;</span></a>` : ''}
+                    ${member.social.instagram !== '#' ? `<a href="${member.social.instagram}" target="_blank" rel="noopener noreferrer"><img class="social-icon" src="https://cdn.simpleicons.org/instagram" alt="">Instagram <span aria-hidden="true">-&gt;</span></a>` : ''}
                 </div>
             </div>
         `;
