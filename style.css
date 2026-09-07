@@ -34,6 +34,13 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -45,6 +52,8 @@ body {
   line-height: 1.6;
   position: relative;
   overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .background-overlay {
@@ -654,6 +663,12 @@ header p::after {
   background:
     linear-gradient(145deg, rgba(41, 42, 71, 0.98), rgba(25, 25, 40, 0.98));
   border-color: rgba(136, 146, 191, 0.55);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.modal-content::-webkit-scrollbar {
+  display: none;
 }
 
 /* rich title bar */
@@ -863,6 +878,27 @@ header p::after {
   border-radius: 5px;
   object-fit: cover;
   border-bottom: 1px solid var(--border);
+}
+
+.cert-pdf-thumb {
+  pointer-events: none;
+  background: #fff;
+}
+
+.pdf-viewer {
+  width: min(90vw, 900px);
+  height: min(90vh, 1100px);
+  border: 0;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+}
+
+.image-viewer {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 
 .cert-item span {

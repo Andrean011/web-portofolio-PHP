@@ -48,6 +48,18 @@ function renderPhoto(member, className) {
     return `<img class="${className}" src="${member.photo}" alt="${member.name}">`;
 }
 
+function isPdf(src) {
+    return src.toLowerCase().split('?')[0].endsWith('.pdf');
+}
+
+function renderCertificateThumbnail(src) {
+    if (isPdf(src)) {
+        return `<iframe class="cert-thumb cert-pdf-thumb" src="${src}#page=1&view=FitH" title="Preview PDF sertifikat" loading="lazy"></iframe>`;
+    }
+
+    return `<img src="${src}" class="cert-thumb" alt="Thumbnail sertifikat" loading="lazy" onerror="this.src='https://via.placeholder.com/150?text=Sertifikat'">`;
+}
+
 window.showDetail = async (id) => {
     try {
         const response = await fetch('data.json');
@@ -83,8 +95,8 @@ window.showDetail = async (id) => {
                 <div class="certificates">
                     ${(member.certificates || []).map(c => `
                         <button class="cert-item" type="button" onclick="openLightbox('${c}')" aria-label="Buka sertifikat">
-                            <img src="${c}" class="cert-thumb" alt="Sertifikat" onerror="this.src='https://via.placeholder.com/150?text=Sertifikat'">
-                            <span>Open image <b aria-hidden="true">-&gt;</b></span>
+                            ${renderCertificateThumbnail(c)}
+                            <span>${isPdf(c) ? 'Open PDF' : 'Open image'} <b aria-hidden="true">-&gt;</b></span>
                         </button>
                     `).join('')}
                 </div>
@@ -107,8 +119,10 @@ window.openLightbox = (src) => {
     const lightbox = document.createElement('div');
     lightbox.className = 'modal-overlay';
     lightbox.style.zIndex = '2000';
-    lightbox.onclick = () => lightbox.remove();
-    lightbox.innerHTML = `<img src="${src}" style="max-width: 90%; max-height: 90%; border-radius: 10px; box-shadow: 0 0 30px rgba(0,0,0,0.5);">`;
+    lightbox.onclick = (event) => { if (event.target === lightbox) lightbox.remove(); };
+    lightbox.innerHTML = isPdf(src)
+        ? `<iframe class="pdf-viewer" src="${src}" title="Sertifikat PDF"></iframe>`
+        : `<img src="${src}" class="image-viewer" alt="Sertifikat">`;
     document.body.appendChild(lightbox);
 };
 

@@ -12,7 +12,11 @@
       "linkedin": "https://www.linkedin.com/in/robbinchan/",
       "instagram": "https://www.instagram.com/rbbincfa_/"
     },
-    "certificates": []
+    "certificates": [
+     "img/certificate/chandra/aws-10.pdf",
+     "img/certificate/chandra/serti.pdf"
+
+    ]
   },
   {
     "id": 2,
