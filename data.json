@@ -121,7 +121,14 @@
       "linkedin": "https://www.linkedin.com/in/andrean-syahputra-purifigara-24979b42a/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BVdlejdBfSliNDVedVtEmNQ%3D%3D",
       "instagram": "https://www.instagram.com/p/DcIdX3-k0fU/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ=="
     },
-    "certificates": []
+    "certificates": [
+      "img/certificate/andre/Sertifikat1.pdf",
+      "img/certificate/andre/Sertifikat2.pdf",
+      "img/certificate/andre/Sertifikat3.jpeg",
+      "img/certificate/andre/Sertifikat4.jpeg",
+      "img/certificate/andre/Sertifikat5.jpeg",
+      "img/certificate/andre/Sertifikat6.jpeg"
+    ]
   },
   {
     "id": 9,
@@ -136,6 +143,12 @@
       "linkedin": "https://www.linkedin.com/in/reifan-n-a-29127a42b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       "instagram": "https://www.instagram.com/reel/DcOgbxzv-Ae/?igsh=MXQyaDF2bmdkZWt4aQ=="
     },
-    "certificates": []
+    "certificates": [
+      "img/certificate/ardana/Sertifikat1.png",
+      "img/certificate/ardana/Sertifikat2.pdf",
+      "img/certificate/ardana/Sertifikat3.pdf",
+      "img/certificate/ardana/Sertifikat4.jpeg",
+      "img/certificate/ardana/Sertifikat5.jpeg"
+    ]
   }
 ]
