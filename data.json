@@ -5,17 +5,22 @@
     "displayName": "Chandra",
     "role": "Team Lead",
     "photo": "img/fotoprofil/Chandra.jpeg",
-    "motivation":"stay hard.",
-    "about": "Motivated and hardworking individual with a strong passion for software development, especially in Golang. Eager to learn new technologies, build efficient solutions, and continuously improve technical and problem-solving skills.",
+    "motivation": {
+      "id": "Tetap tangguh pantang menyerah.",
+      "en": "Stay hard."
+    },
+    "about": {
+      "id": "Pribadi yang termotivasi dan pekerja keras dengan dedikasi tinggi pada software development, khususnya Golang. Bersemangat mempelajari teknologi baru, membangun solusi yang efisien, dan terus meningkatkan keterampilan teknis serta pemecahan masalah.",
+      "en": "Motivated and hardworking individual with a strong passion for software development, especially in Golang. Eager to learn new technologies, build efficient solutions, and continuously improve technical and problem-solving skills."
+    },
     "social": {
       "github": "https://github.com/cpzz18",
       "linkedin": "https://www.linkedin.com/in/robbinchan/",
       "instagram": "https://www.instagram.com/rbbincfa_/"
     },
     "certificates": [
-     "img/certificate/chandra/aws-10.pdf",
-     "img/certificate/chandra/serti.pdf"
-
+      "img/certificate/chandra/aws-10.pdf",
+      "img/certificate/chandra/serti.pdf"
     ]
   },
   {
@@ -24,8 +29,14 @@
     "displayName": "Ranita",
     "role": "Team Lead",
     "photo": "img/fotoprofil/risqi.jpeg",
-    "motivation": "konsisten adalah kunci.",
-    "about": "Saya seorang mahasiswi yang mendalami jaringan, cybersecurity, dan pengembangan sistem. Terbiasa mengelola infrastruktur MikroTik, fiber optik, hingga perancangan database dan UI/UX. Bagi saya, memecahkan bug dan membangun sistem yang aman adalah wadah terbaik untuk mengasah kemampuan problem-solving.",
+    "motivation": {
+      "id": "Konsisten adalah kunci.",
+      "en": "Consistency is key."
+    },
+    "about": {
+      "id": "Saya seorang mahasiswi yang mendalami jaringan, cybersecurity, dan pengembangan sistem. Terbiasa mengelola infrastruktur MikroTik, fiber optik, hingga perancangan database dan UI/UX. Bagi saya, memecahkan bug dan membangun sistem yang aman adalah wadah terbaik untuk mengasah kemampuan problem-solving.",
+      "en": "I am a student specializing in networking, cybersecurity, and system development. Experienced in managing MikroTik infrastructure, fiber optics, database design, and UI/UX. For me, resolving bugs and building secure systems is the best way to hone problem-solving skills."
+    },
     "social": {
       "github": "https://github.com/rizhalwarda",
       "linkedin": "https://www.linkedin.com/in/ranita-rizqi-4180b4381?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
@@ -39,8 +50,14 @@
     "displayName": "Dysca",
     "role": "Member",
     "photo": "img/fotoprofil/dysca.jpeg",
-    "motivation": "Kegagalan bukanlah akhir, melainkan awal untuk mencoba lebih baik.",
-    "about": "Saya sangat suka mendengarkan musik.",
+    "motivation": {
+      "id": "Kegagalan bukanlah akhir, melainkan awal untuk mencoba lebih baik.",
+      "en": "Failure is not the end, but the beginning of trying even better."
+    },
+    "about": {
+      "id": "Saya sangat suka mendengarkan musik.",
+      "en": "I really enjoy listening to music."
+    },
     "social": {
       "github": "https://github.com/dyscaputrikharismawati09",
       "linkedin": "https://www.linkedin.com/in/dysca-putri-kharismawati-90581142a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
@@ -54,8 +71,14 @@
     "displayName": "Salma",
     "role": "Member",
     "photo": "img/fotoprofil/salma.jpeg",
-    "motivation": "Buktikan dengan proses, bukan hanya dengan kata-kata.",
-    "about": "Saya suka membaca buku, menyanyi, dan mendengarkan lagu.",
+    "motivation": {
+      "id": "Buktikan dengan proses, bukan hanya dengan kata-kata.",
+      "en": "Prove it through the process, not just words."
+    },
+    "about": {
+      "id": "Saya suka membaca buku, menyanyi, dan mendengarkan lagu.",
+      "en": "I enjoy reading books, singing, and listening to songs."
+    },
     "social": {
       "github": "https://github.com/salmanuraini",
       "linkedin": "https://www.linkedin.com/in/salma-nuraini-b716ba42a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
@@ -69,8 +92,14 @@
     "displayName": "Eva",
     "role": "Member",
     "photo": "img/fotoprofil/eva.jpeg",
-    "motivation": "Live for your growth, your dreams, and your future.",
-    "about": "Saya suka makan mi ayam.",
+    "motivation": {
+      "id": "Hiduplah demi perkembangan dirimu, impianmu, dan masa depanmu.",
+      "en": "Live for your growth, your dreams, and your future."
+    },
+    "about": {
+      "id": "Saya suka makan mi ayam.",
+      "en": "I love eating chicken noodles (mie ayam)."
+    },
     "social": {
       "github": "https://github.com/evaaprillia",
       "linkedin": "https://www.linkedin.com/in/eva-april-lia-107b10428?utm_source=share_via&utm_content=profile&utm_medium=member_android",
@@ -84,8 +113,14 @@
     "displayName": "Rizky",
     "role": "Member",
     "photo": "img/fotoprofil/rizki.jpeg",
-    "motivation": "Awali dengan Bismillah, akhiri dengan Alhamdulillah.",
-    "about": "Saya suka berolahraga, seperti bermain bola dan jogging.",
+    "motivation": {
+      "id": "Awali dengan Bismillah, akhiri dengan Alhamdulillah.",
+      "en": "Start with Bismillah, end with Alhamdulillah."
+    },
+    "about": {
+      "id": "Saya suka berolahraga, seperti bermain bola dan jogging.",
+      "en": "I enjoy sports, particularly playing soccer and jogging."
+    },
     "social": {
       "github": "https://github.com/rizkybagusw11-php",
       "linkedin": "https://www.linkedin.com/in/rizky-bagus-08993a42a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
@@ -99,14 +134,27 @@
     "displayName": "Dafa",
     "role": "Member",
     "photo": "img/fotoprofil/dafa.jpeg",
-    "motivation": "Jangan takut gagal, takutlah kalau WiFi mati saat tugas belum terkirim.",
-    "about": "Saya adalah pribadi yang memiliki rasa ingin tahu tinggi dan senang mempelajari hal-hal baru, terutama yang berkaitan dengan teknologi dan komputer.",
+    "motivation": {
+      "id": "Jangan takut gagal, takutlah kalau WiFi mati saat tugas belum terkirim.",
+      "en": "Don't fear failure, fear the Wi-Fi dying before the assignment is submitted."
+    },
+    "about": {
+      "id": "Saya adalah pribadi yang memiliki rasa ingin tahu tinggi dan senang mempelajari hal-hal baru, terutama yang berkaitan dengan teknologi dan komputer.",
+      "en": "I am a highly curious individual who loves learning new things, especially related to technology and computers."
+    },
     "social": {
       "github": "https://github.com/Dafamsd",
       "linkedin": "https://www.linkedin.com/in/dafa-muhharom-081b1b430?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       "instagram": "https://www.instagram.com/dafamsd?igsh=bXh1dTd5Y21vZXh2&igsi=bXh1dTd5Y21vZXh2"
     },
-    "certificates": []
+    "certificates": [
+      "img/certificate/dafa/Sertifikat1.png",
+      "img/certificate/dafa/Sertifikat2.png",
+      "img/certificate/dafa/Sertifikat3.png",
+      "img/certificate/dafa/Sertifikat4.png",
+      "img/certificate/dafa/Sertifikat5.jpeg",
+      "img/certificate/dafa/Sertifikat6.jpeg"
+    ]
   },
   {
     "id": 8,
@@ -114,8 +162,14 @@
     "displayName": "Andre",
     "role": "Member",
     "photo": "img/fotoprofil/andre.jpeg",
-    "motivation": "Saya bangga menjadi WNI.",
-    "about": "Saya sangat suka bermain game, ngoding, dan menonton anime.",
+    "motivation": {
+      "id": "Saya bangga menjadi WNI.",
+      "en": "I am proud to be an Indonesian citizen."
+    },
+    "about": {
+      "id": "Saya sangat suka bermain game, ngoding, dan menonton anime.",
+      "en": "I really enjoy gaming, coding, and watching anime."
+    },
     "social": {
       "github": "https://github.com/Andrean011",
       "linkedin": "https://www.linkedin.com/in/andrean-syahputra-purifigara-24979b42a/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BVdlejdBfSliNDVedVtEmNQ%3D%3D",
@@ -136,8 +190,14 @@
     "displayName": "Ardana",
     "role": "Member",
     "photo": "img/fotoprofil/ardana.jpeg",
-    "motivation": "Setiap langkah pasti bergejolak.",
-    "about": "Saya lahir di Ngawi. Keunikan saya adalah menyukai semua buah.",
+    "motivation": {
+      "id": "Setiap langkah pasti bergejolak.",
+      "en": "Every step has its own turbulence."
+    },
+    "about": {
+      "id": "Saya lahir di Ngawi. Keunikan saya adalah menyukai semua jenis buah.",
+      "en": "I was born in Ngawi. A unique thing about me is that I like all kinds of fruit."
+    },
     "social": {
       "github": "https://github.com/ardana-netizen",
       "linkedin": "https://www.linkedin.com/in/reifan-n-a-29127a42b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
