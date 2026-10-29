@@ -93,7 +93,14 @@
       "linkedin": "https://www.linkedin.com/in/salma-nuraini-b716ba42a?utm_source=share_via&utm_content=profile&utm_medium=member_android",
       "instagram": "https://www.instagram.com/ssalmaanr?utm_source=qr&igsh=MXNtdjY5aTg4MTNoZw=="
     },
-    "certificates": []
+    "certificates": [
+      "img/certificate/salma/Sertifikat1.pdf",
+      "img/certificate/salma/Sertifikat2.pdf",
+      "img/certificate/salma/Sertifikat3.pdf",
+      "img/certificate/salma/Sertifikat4.jpeg",
+      "img/certificate/salma/Sertifikat5.jpeg",
+      "img/certificate/salma/Sertifikat6.jpeg"
+    ] 
   },
   {
     "id": 5,
